@@ -7,9 +7,29 @@ sin_series = series(sin(x), x, 0, 20).removeO()
 
 equation = cos_series - sin_series
 
-real_solutions = solveset(equation, x, domain=S.Reals).intersection(Interval(5, 10))
+section_1 = 5
+
+section_2 = 10
+
+real_solutions = solveset(equation, x, domain=S.Reals).intersection(Interval(section_1, section_2))
 
 numerical_solutions = [N(sol) for sol in real_solutions]
 
-print("共有点:", real_solutions)
-print("数値に変換した共有点:", numerical_solutions)
+print("ok")
+
+f = open('points.txt', 'a', encoding='UTF-8')
+
+text = f"""
+x区間{section_1}~{section_2}の共有点
+
+共有点
+{real_solutions}
+
+数値変換共有点
+{numerical_solutions}
+
+----------------------
+"""
+
+f.write(text)
+f.close()
