@@ -7,7 +7,7 @@ sin_series = series(sin(x), x, 0, 20).removeO()
 
 equation = cos_series - sin_series
 
-section_1 = 5
+section_1 = 1
 
 section_2 = 10
 
@@ -28,8 +28,9 @@ x区間{section_1}~{section_2}の共有点
 数値変換共有点
 {numerical_solutions}
 
-----------------------
+--------------------------------------------
 """
 
 f.write(text)
+
 f.close()
